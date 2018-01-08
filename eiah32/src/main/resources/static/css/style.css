@@ -1,0 +1,313 @@
+@CHARSET "UTF-8";
+body{
+	background-color: #F6F6F6;
+}
+
+lable {
+	font-weight: bold;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+/* start head.jsp*/
+.h_container {
+	border-top: 4px solid #6DB33F;
+}
+.h_d1 {
+	height:70px;
+    background-color: #34302D;
+}
+.logo {
+	width: 400px;
+	height: 70px;
+	float: left;
+}
+.logo p {
+	font-family: Cursive;
+	font-weight: bold;
+	font-style:oblique;
+	font-size: 30px;
+	margin: 17px auto auto 160px ;
+	color: white;	
+}
+.menu {
+	float: left;
+	height: 70px;
+	width: 55%;
+}
+.menu .nav {
+	float: right;
+	width: 500px;
+	height: 70px;
+	line-height: 70px;
+	margin: 0 auto;
+	position: relative;
+}
+.menu .nav li{
+	float: right;
+	width: 20%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	list-style: none;
+}
+.menu .nav li:hover {
+	background: #6DB33F;
+}
+.menu .nav li a {
+	color: #fff;
+	text-decoration: none;
+}
+.image {
+	float: right;
+	width: 69px;
+	height: 69px;
+	margin: auto 30px 0px auto;
+	border-top-left-radius: 100%;
+	border-top-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+	border-bottom-right-radius: 100%;
+	box-sizing: border-box;
+	background: #3D3936;
+}
+.image img {
+	display: block;
+	width: 100%;
+}
+.image .nav-info {
+	width: 100px;
+	display: none;
+	position: relative;
+}
+.image .nav-info  li{
+	text-align: center;
+	list-style: none;
+	position: relative;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background: #ccc;
+	border-top: 1px solid #34302D;
+}
+.image .nav-info  li a {
+	
+	color: black;
+	text-decoration: none;
+}
+/* end head.jsp*/
+
+/* start body.jsp */
+.b_container {
+	min-height: 550px;
+	width: 100%;
+}
+.b_guides {
+	height: 540px;
+	width: 100%;
+	background-color: #EBF1E7;
+}
+.b_list {
+	height: 800px;
+	background-color: #F1F1F1;
+	border-top: 1px solid #DDDBDA;
+}
+/* end body.jsp */
+
+/* start bottom.jsp */
+.bottom_c {
+	height: 50px;
+	width: 100%;
+	border-top: 1px solid #ccc;
+}
+/* end bottom.jsp */
+
+/* start userInfo.jsp*/
+.userInfo {
+	margin: 20px auto;
+	height: 550px;
+	width: 60%;
+}
+.userInfo-pwd {
+	margin: 20px auto;
+	height: 450px;
+	width: 40%;
+}
+.ui-title {
+	border-top-left-radius: 3px;
+ 	border-top-right-radius: 3px;
+	padding-top: 40px;
+	width: 100%;
+	height: 8%;
+	background: white;
+}
+.ui-title b {
+	height: 40px;
+	margin-left: 80px;
+	padding-bottom:0px;
+	font-size: 18px;
+}
+.ui-image {
+  	border-bottom-left-radius: 3px;
+	background: white;
+	width: 30%;
+	height: 85%;
+	float: left;
+}
+.ui-image .img {
+	background: #ccc;
+  	width: 100px;
+  	height: 100px;
+  	margin: 100px auto;
+  	padding: 10px 10px;
+  	border-top-left-radius: 100%;
+ 	border-top-right-radius: 100%;
+  	border-bottom-left-radius: 100%;
+  	border-bottom-right-radius: 100%;
+  	box-sizing: border-box;
+  	float: right;
+}
+.ui-image .img img {
+	display: block;
+  	width: 100%;
+}
+.ui-image .img:hover {
+	background-color: #EBF1E7;
+}
+.ui-content {
+  	border-bottom-right-radius: 3px;
+	background: white;
+	width: 70%;
+	height: 85%;
+	float: left;
+}
+.ui-content-pwd {
+  	border-bottom-left-radius: 3px;
+  	border-bottom-right-radius: 3px;
+	padding-top: 90px;
+	background: white;
+	width: 100%;
+	height: 85%;
+	float: left;
+}
+.group {
+	margin: 20px 20px;
+	width: 100%;
+	height: 40px;
+}
+.group .g-lable {
+	float: left;
+	width: 35%;
+	height: 25px;
+	text-align: right;
+}
+.group .g-input {
+	float: left;
+	width: 40%;
+	height: 25px;
+}
+.group .g-input input {
+	height: 100%;
+	width: 100%;
+}
+.g-gender {
+	float: left;
+	width: 40%;
+	height: 25px;
+}
+.ui-save {
+	width: 100px;
+	height: 35px;
+	margin: 70px auto;
+}
+.ui-save input {
+	width: 100%;
+	height: 100%;
+	background: #EBF1E7;
+	border: 1px solid #BFD6AF;
+}
+.g-tip {
+	width: 55%;
+	height: 20px;
+	float: left;
+	margin:5px auto auto 35%;
+	font-size: 12px;
+}
+.g-tip .tip-error {
+	color: #ff8484;
+}
+.g-tip .tip-ok {
+	color: #7ABD54;
+}
+.g-tip .tip-disable {
+	color: #999999;
+}
+/* end userInfo.jsp*/
+
+/* start headImage.jsp */
+.imageInfo {
+	margin: 20px auto;
+	height: 550px;
+	width: 60%;
+}
+.ui-headImage {
+	width: 100%;
+	height: 100%;
+}
+.original-image {
+	float: left;
+}
+.cut-image {
+	float: right;
+	width: 300px;
+	height: 300px;
+	border: 1px solid red;
+}
+.crop_preview {
+	float: left;
+	width:120px;
+	height:120px;
+	margin: 50px auto auto 50px;
+	border-top-left-radius: 100%;
+ 	border-top-right-radius: 100%;
+  	border-bottom-left-radius: 100%;
+  	border-bottom-right-radius: 100%;
+	overflow: hidden;
+}
+.tuijianImage {
+	margin-top: 30px;
+	float: left;
+	height: 10%;
+	width: 100%;
+	border: 1px solid blue;
+}
+.saveImage {
+	width:100%;
+	height:60px;
+	border: 1px solid red;
+}
+.mark {
+	overflow:hidden;
+}
+/* end headImage.jsp */
+/* start goTop */
+#gotop{
+	display: none;
+	background-position:-276px -310px;
+	bottom:67px;
+	_margin-bottom:67px;
+    width:40px;
+    height:40px;
+    position:fixed;
+    right:50px;
+    cursor:pointer;
+    _position:absolute;
+}
+/* end goTop */

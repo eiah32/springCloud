@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.eiah.mapper.IUserMapper">
+
+	<resultMap id="userResult" type="com.eiah.domain.User">
+		<result property="id" column="id"/>
+		<result property="username" column="username"/>
+		<result property="password" column="password"/>
+		<result property="gender" column="gender"/>
+		<result property="email" column="email"/>
+		<result property="tel" column="tel"/>
+		<result property="birthday" column="birthday"/>
+		<result property="registDate" column="regist_date"/>
+		<result property="lastLoginDate" column="last_login_date"/>
+		<result property="status" column="status"/>
+		<result property="salt" column="salt"/>
+		<result property="srcImgPath" column="src_img_path"/>
+		<result property="cutImgPath" column="cut_img_path"/>
+		<association property="role" javaType="com.eiah.domain.Role">
+		    <result property="roleType" column="roleType"/>
+		    <association property="permission" javaType="com.eiah.domain.Permission">
+				<result property="url" column="url"/>
+			</association>
+		</association>
+	</resultMap>
+	
+	<!-- 查询用户角色权限信息 -->
+	<select id="findUserAllInfoByUsername" resultMap="userResult" parameterType="string">
+		select ui.id, ui.username, ui.password, ui.gender, ui.email, ui.tel, ui.birthday,
+					ul.regist_date, ul.last_login_date, ul.status, ul.salt, ul.src_img_path, ul.cut_img_path,
+					r.roletype, p.url
+		  from userlogin ul left join userinfo ui on ul.id = ui.id
+										    left join userinfo_role ur on ui.id = ur.uiid 
+										    left join role r on ur.rid = r.id
+										    left join role_permission rp on r.id = rp.rid 
+										    left join permission p on rp.pid = p.id
+		where ui.username = #{user.username}
+	</select>
+	
+	<!-- 更新用户信息表 -->
+	<update id="updateUserInfo" >
+		update userinfo 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="gender == null or gender == 0 or gender == 1">
+				gender = #{gender}, 
+			</if>
+			<if test="tel != null and tel != '' ">
+				tel = #{tel},
+			</if>
+			<if test="birthday != null">
+				birthday = #{birthday,jdbcType=DATE},
+			</if>
+			<if test="email != null and email != '' ">
+				email = #{email},
+			</if>
+		</trim>
+		<where>
+			id = #{id}
+		</where>
+	</update>
+	
+	<!-- 更新用户登录信息表 
+	<update id="updateUserLogin">
+		update userlogin
+		<trim prefix="set" suffixOverrides=",">
+			<if test="username != null and username != '' ">
+				username = #{username},
+			</if>
+		</trim>
+		<where>
+				id = #{id}
+			</where>
+	</update>
+	-->
+</mapper>
